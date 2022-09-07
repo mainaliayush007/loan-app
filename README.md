@@ -87,7 +87,7 @@ cd frontend
 npm install
 npm run start
 ```
-## Runing the test locally
+## Runing tests
 **NOTE**: Packages python packages needs to be installed for each serivices by navigating to the service directory before running the test which can be installed by the command below
 ```bash
 python3 -m pip install --no-cache-dir --upgrade -r requirements.txt
