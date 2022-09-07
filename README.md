@@ -44,42 +44,42 @@ docker compose up -d
 
 ## Run locally
 #### 1. Backend
-**Prerequisite** python3
+**Prerequisite** python3 and pip
 ```bash
 # Navigate to the backed directory
 cd backend
-pip install --no-cache-dir --upgrade -r requirements.txt
+python3 -m pip install --no-cache-dir --upgrade -r requirements.txt
 python3 -m uvicorn main:app --port 8000 --reload
 ```
 
 #### 2. Accounting Service for XERO
-**Prerequisite** python3
+**Prerequisite** python3 and pip
 ```bash
 # Navigate to the backed directory
 cd accounting-service-Xero
-pip install --no-cache-dir --upgrade -r requirements.txt
+python3 -m pip install --no-cache-dir --upgrade -r requirements.txt
 python3 -m uvicorn main:app --port 8001 --reload
 ```
 
 #### 3. Accounting Service for MYOB
-**Prerequisite** python3
+**Prerequisite** python3 and pip
 ```bash
 # Navigate to the backed directory
 cd accounting-service-MYOB
-pip install --no-cache-dir --upgrade -r requirements.txt
+python3 -m pip install --no-cache-dir --upgrade -r requirements.txt
 python3 -m uvicorn main:app --port 8002 --reload
 ```
 
 #### 4. Decision Engine
-**Prerequisite** python3
+**Prerequisite** python3 and pip
 ```bash
 # Navigate to the backed directory
 cd decision-engine-service
-pip install --no-cache-dir --upgrade -r requirements.txt
+python3 -m pip install --no-cache-dir --upgrade -r requirements.txt
 python3 -m uvicorn main:app --port 8003 --reload
 ```
 
-#### 4. Frontend
+#### 5. Frontend
 **Prerequisite** npm
 ```bash
 # Navigate to the backed directory
@@ -87,6 +87,44 @@ cd frontend
 npm install
 npm run start
 ```
+## Runing the test locally
+**NOTE**: Packages python packages needs to be installed for each serivices by navigating to the service directory before running the test which can be installed by the command below
+```bash
+python3 -m pip install --no-cache-dir --upgrade -r requirements.txt
+```
+#### 1. Backend
+**Prerequisite** python3
+```bash
+# Navigate to the backed directory
+cd backend
+python3 -m pytest
+```
+
+#### 2. Accounting Service for XERO
+**Prerequisite** python3
+```bash
+# Navigate to the backed directory
+cd accounting-service-Xero
+python3 -m pytest
+```
+
+#### 3. Accounting Service for MYOB
+**Prerequisite** python3
+```bash
+# Navigate to the backed directory
+cd accounting-service-MYOB
+python3 -m pytest
+```
+
+#### 4. Decision Engine
+**Prerequisite** python3
+```bash
+# Navigate to the backed directory
+cd decision-engine-service
+python3 -m pytest
+```
+
+
 
 
 
