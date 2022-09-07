@@ -1,0 +1,53 @@
+version: "3.8"
+
+services:
+  # Fast API web server
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    hostname: backend
+    expose:
+      - 8000
+    ports:
+      - "8000:8000"
+
+  xero:
+    build:
+      context: ./accounting-service-Xero
+      dockerfile: Dockerfile
+    hostname: xero
+    expose:
+      - 8001
+    ports:
+      - "8001:8001"
+  myob:
+    build:
+      context: ./accounting-service-MYOB
+      dockerfile: Dockerfile
+    hostname: myob
+    expose:
+      - 8002
+    ports:
+      - "8002:8002"
+
+  decision-engine:
+    build:
+      context: ./decision-engine-service
+      dockerfile: Dockerfile
+    hostname: decision-engine
+    expose:
+      - 8003
+    ports:
+      - "8003:8003"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "8004:80"
+
+
+
